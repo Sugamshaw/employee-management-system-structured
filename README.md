@@ -19,6 +19,5 @@ mvn spring-boot:run
 ```
 Open http://localhost:8080 • API at `/api/employees`
 
-## Two-line description
 Full-stack Employee Management System built with Spring Boot, RESTful APIs, MySQL, JavaScript, HTML, and CSS.  
 Implements CRUD operations with a responsive frontend and secure, scalable backend integration.
