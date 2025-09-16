@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Management System</h1>
+    <div class="controls">
+      <input id="searchInput" placeholder="Search by name/email/department">
+      <button id="searchBtn">Search</button>
+      <select id="departmentFilter"><option value="">All Departments</option></select>
+      <button id="clearFilters">Clear</button>
+      <button id="addEmployeeBtn">Add Employee</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="employeesTable">
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th><th>Salary</th><th>Hire Date</th><th>Actions</th></tr></thead>
+        <tbody id="employeesTableBody"></tbody>
+      </table>
+      <div id="noEmployeesMessage" class="hidden">No employees found</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="employeeModal" class="modal hidden">
+    <div class="modal-card">
+      <h2 id="modalTitle">Add Employee</h2>
+      <form id="employeeForm">
+        <div class="grid">
+          <input id="firstName" placeholder="First name" required maxlength="50">
+          <input id="lastName" placeholder="Last name" required maxlength="50">
+          <input id="email" type="email" placeholder="Email" required maxlength="100">
+          <select id="department" required>
+            <option value="">Select department</option>
+            <option>IT</option><option>HR</option><option>Finance</option><option>Marketing</option><option>Sales</option>
+          </select>
+          <input id="salary" type="number" min="1" step="0.01" placeholder="Salary" required>
+          <input id="hireDate" type="date" required>
+        </div>
+        <div class="actions">
+          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit" id="saveBtn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirm -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-card small">
+      <h3 id="confirmTitle">Confirm</h3>
+      <p id="confirmMessage">Are you sure?</p>
+      <div class="actions">
+        <button id="confirmCancel">Cancel</button>
+        <button id="confirmOk">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
